@@ -161,7 +161,7 @@ import { calculateRemainingInvestment  } from "@inveto/invform"
 
 🧮 Signature
 ```ts
-calculateProfit(initialInvestment: number, withdrawnAmount: number): number
+calculateRemainingInvestment(initialInvestment: number, withdrawnAmount: number): number
 ```
 
 📋 Parameters
