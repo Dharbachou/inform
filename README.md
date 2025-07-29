@@ -44,9 +44,9 @@ calculateInvestment(amount: number, pricePerAsset: number, fee?: number): number
 ```
 
 📋 Parameters
- - amount (number): The number of assets purchased. Must be greater than or equal to 0.
- - pricePerAsset (number): The price of a single asset. Must be greater than or equal to 0.
- - fee (number, optional, default = 0): Transaction fee. Must be greater than or equal to 0.
+ - `amount (number)`: The number of assets purchased. Must be greater than or equal to 0.
+ - `pricePerAsset (number)`: The price of a single asset. Must be greater than or equal to 0.
+ - `fee (number, optional, default = 0)`: Transaction fee. Must be greater than or equal to 0.
 
 🧪 Usage Examples
 ```ts
@@ -70,9 +70,9 @@ calculateAssetsFromInvestment(investment: number, pricePerAsset: number, fee?: n
 ```
 
 📋 Parameters
- - investment (number): Total amount of money available. Must be ≥ 0.
- - pricePerAsset (number): Price of a single asset. Must be > 0.
- - fee (number, optional, default = 0): Optional transaction fee. Must be ≥ 0.
+ - `investment (number)`: Total amount of money available. Must be ≥ 0.
+ - `pricePerAsset (number)`: Price of a single asset. Must be > 0.
+ - `fee (number, optional, default = 0)`: Optional transaction fee. Must be ≥ 0.
 
 🧪 Usage Examples
 ```ts
@@ -94,9 +94,9 @@ calculatePricePerAsset(investment: number, amount: number, fee?: number): number
 ```
 
 📋 Parameters
- - investment (number): Total amount spent. Must be ≥ 0.
- - amount (number): Number of assets received. Must be > 0.
- - fee (number, optional, default = 0): Optional transaction fee. Must be ≥ 0.
+ - `investment (number)`: Total amount spent. Must be ≥ 0.
+ - `amount (number)`: Number of assets received. Must be > 0.
+ - `fee (number, optional, default = 0)`: Optional transaction fee. Must be ≥ 0.
 
 🧪 Usage Examples
 ```ts
@@ -118,16 +118,16 @@ calculateNetSaleProceeds(amount: number, price: number, fee?: number): number
 ```
 
 📋 Parameters
- - amount (number): Number of assets sold. Must be ≥ 0.
- - price (number): Selling price per asset. Must be ≥ 0.
- - fee (number, optional, default = 0): Transaction fee. Must be ≥ 0.
+ - `amount (number)`: Number of assets sold. Must be ≥ 0.
+ - `price (number)`: Selling price per asset. Must be ≥ 0.
+ - `fee (number, optional, default = 0)`: Transaction fee. Must be ≥ 0.
 
 🧪 Usage Examples
 ```ts
 calculateNetSaleProceeds(10, 50, 20); // => 480
 ```
 
-## 📊 calculateProfit
+### 📊 calculateProfit
 
 Calculates the profit (or loss) from selling an asset.
 
@@ -142,10 +142,33 @@ calculateProfit(saleProceeds: number, investment: number): number
 ```
 
 📋 Parameters
- - saleProceeds (number): The amount received from selling the asset. Must be ≥ 0.
- - investment (number): The total amount originally invested. Must be ≥ 0.
+ - `saleProceeds (number)`: The amount received from selling the asset. Must be ≥ 0.
+ - `investment (number)`: The total amount originally invested. Must be ≥ 0.
 
 🧪 Usage Examples
 ```ts
 calculateProfit(1100, 900); // => 200
+```
+
+### 🏦 calculateRemainingInvestment
+
+Calculates the remaining investment after a partial withdrawal.
+
+📦 Import
+```ts
+import { calculateRemainingInvestment  } from "@inveto/invform"
+```
+
+🧮 Signature
+```ts
+calculateProfit(initialInvestment: number, withdrawnAmount: number): number
+```
+
+📋 Parameters
+ - `initialInvestment (number)`: The original total investment. Must be ≥ 0.
+ - `withdrawnAmount (number)`: The amount withdrawn. Must be ≥ 0.
+
+🧪 Usage Examples
+```ts
+calculateRemainingInvestment(10000, 4000); // => 6000
 ```
