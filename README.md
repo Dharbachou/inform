@@ -39,7 +39,6 @@ import { calculateInvestment  } from "@inveto/invform"
 ```
 
 🧮 Signature
-
 ```ts
 calculateInvestment(amount: number, pricePerAsset: number, fee?: number): number
 ```
@@ -50,7 +49,6 @@ calculateInvestment(amount: number, pricePerAsset: number, fee?: number): number
  - fee (number, optional, default = 0): Transaction fee. Must be greater than or equal to 0.
 
 🧪 Usage Examples
-
 ```ts
 calculateInvestment(10, 100, 5); // => 1005
 
@@ -67,7 +65,6 @@ import { calculateAssetsFromInvestment  } from "@inveto/invform"
 ```
 
 🧮 Signature
-
 ```ts
 calculateAssetsFromInvestment(investment: number, pricePerAsset: number, fee?: number): number
 ```
@@ -78,9 +75,30 @@ calculateAssetsFromInvestment(investment: number, pricePerAsset: number, fee?: n
  - fee (number, optional, default = 0): Optional transaction fee. Must be ≥ 0.
 
 🧪 Usage Examples
-
 ```ts
 calculateAssetsFromInvestment(1000, 100, 50); // => 9.5
 ```
 
+### 💰 calculatePricePerAsset
 
+Calculates the effective price per asset based on the total investment amount, the number of assets received, and an optional fee.
+
+📦 Import
+```ts
+import { calculatePricePerAsset  } from "@inveto/invform"
+```
+
+🧮 Signature
+```ts
+calculatePricePerAsset(investment: number, amount: number, fee?: number): number
+```
+
+📋 Parameters
+ - investment (number): Total amount spent. Must be ≥ 0.
+ - amount (number): Number of assets received. Must be > 0.
+ - fee (number, optional, default = 0): Optional transaction fee. Must be ≥ 0.
+
+🧪 Usage Examples
+```ts
+calculatePricePerAsset(1050, 10, 50); // => 100
+```
