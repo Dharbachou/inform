@@ -31,7 +31,7 @@ npm install @investo/invform
 
 ### 📈 calculateInvestment
 
-Calculates the total investment based on the number of coins, price per coin, and optional fee.
+Calculates the total investment based on the number of assets, price per asset, and optional fee.
 
 📦 Import
 ```ts
@@ -52,10 +52,35 @@ calculateInvestment(amount: number, pricePerAsset: number, fee?: number): number
 🧪 Usage Examples
 
 ```ts
-calculateInvestment(10, 100, 5);
-// => 1005
+calculateInvestment(10, 100, 5); // => 1005
 
-calculateInvestment(10, 100);
-// => 1000 (if fee is not provided)
+calculateInvestment(10, 100); // => 1000 (if fee is not provided)
 ```
+
+### 📉 calculateAssetsFromInvestment
+
+Calculates how many assets can be purchased with a given investment, price per coin, and optional fee.
+
+📦 Import
+```ts
+import { calculateAssetsFromInvestment  } from "@inveto/invform"
+```
+
+🧮 Signature
+
+```ts
+calculateAssetsFromInvestment(investment: number, pricePerAsset: number, fee?: number): number
+```
+
+📋 Parameters
+ - investment (number): Total amount of money available. Must be ≥ 0.
+ - pricePerAsset (number): Price of a single asset. Must be > 0.
+ - fee (number, optional, default = 0): Optional transaction fee. Must be ≥ 0.
+
+🧪 Usage Examples
+
+```ts
+calculateAssetsFromInvestment(1000, 100, 50); // => 9.5
+```
+
 

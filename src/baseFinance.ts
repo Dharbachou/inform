@@ -1,7 +1,7 @@
 /**
- * Calculates the total investment based on the number of coins, price per coin, and optional fee.
+ * Calculates the total investment based on the number of assets, price per asset, and optional fee.
  *
- * @param {number} amount - The number of coins purchased (must be ≥ 0).
+ * @param {number} amount - The number of assets purchased (must be ≥ 0).
  * @param {number} pricePerAsset - The price of one asset (must be ≥ 0).
  * @param {number} [fee=0] - Optional transaction fee (can be 0, must be ≥ 0).
  * @returns {number} - The total investment amount.
@@ -29,7 +29,7 @@ export const calculateInvestment = (
 }
 
 /**
- * Calculates how many coins can be purchased with a given investment, price per coin, and optional fee.
+ * Calculates how many coins can be purchased with a given investment, price per asset, and optional fee.
  *
  * Formula:
  * coins = (investment - fee) / pricePerAsset
