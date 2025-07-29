@@ -102,3 +102,27 @@ calculatePricePerAsset(investment: number, amount: number, fee?: number): number
 ```ts
 calculatePricePerAsset(1050, 10, 50); // => 100
 ```
+
+### 💵 calculateNetSaleProceeds
+
+Calculates the net proceeds from selling assets, subtracting any transaction fee from the total sale value.
+
+📦 Import
+```ts
+import { calculateNetSaleProceeds  } from "@inveto/invform"
+```
+
+🧮 Signature
+```ts
+calculateNetSaleProceeds(amount: number, price: number, fee?: number): number
+```
+
+📋 Parameters
+ - amount (number): Number of assets sold. Must be ≥ 0.
+ - price (number): Selling price per asset. Must be ≥ 0.
+ - fee (number, optional, default = 0): Transaction fee. Must be ≥ 0.
+
+🧪 Usage Examples
+```ts
+calculateNetSaleProceeds(10, 50, 20); // => 480
+```
