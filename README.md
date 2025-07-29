@@ -126,3 +126,26 @@ calculateNetSaleProceeds(amount: number, price: number, fee?: number): number
 ```ts
 calculateNetSaleProceeds(10, 50, 20); // => 480
 ```
+
+## 📊 calculateProfit
+
+Calculates the profit (or loss) from selling an asset.
+
+📦 Import
+```ts
+import { calculateProfit  } from "@inveto/invform"
+```
+
+🧮 Signature
+```ts
+calculateProfit(saleProceeds: number, investment: number): number
+```
+
+📋 Parameters
+ - saleProceeds (number): The amount received from selling the asset. Must be ≥ 0.
+ - investment (number): The total amount originally invested. Must be ≥ 0.
+
+🧪 Usage Examples
+```ts
+calculateProfit(1100, 900); // => 200
+```
